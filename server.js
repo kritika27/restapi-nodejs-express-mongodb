@@ -11,8 +11,8 @@ app.use(bodyParser.json());
 //Connecting to database
 mongoose.connect(
   process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useCreateIndex: true },
-  () => console.log("Connected to databse.")
+  { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
+  () => console.log("Connected to database.")
 );
 
 const userRouter = require("./routes/users");
