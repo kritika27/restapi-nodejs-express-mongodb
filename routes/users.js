@@ -41,7 +41,7 @@ router.get("/:userId", async (req, res) => {
 //Delete user based on id
 router.delete("/:userId", async (req, res) => {
   try {
-    const data = await User.remove({ _id: req.params.userId });
+    const data = await User.deleteOne({ _id: req.params.userId });
     res.json(data);
   } catch (err) {
     res.json({ message: err });
